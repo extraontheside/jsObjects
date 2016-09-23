@@ -1,4 +1,6 @@
-window.alert("Zombie apocalypse.");
+var outcome;
+
+window.alert("It's the zombie apocalypse.");
 var beginningSenarios = ["You're in a supermarket.", "You see a Zombie."];
 
 function randomNumber(range) {
@@ -8,12 +10,12 @@ function randomNumber(range) {
     }
 }
 
-window.alert(beginningSenarios[randomNumber(beginningScenarios.length = 1)]);
+window.alert(beginningSenarios[randomNumber(beginningSenarios.length - 1)]);
 
 var character = {
-    health: 10,
-    strenght: 3,
-    stealth: 2,
+    health: 5,
+    strenght: 0,
+    stealth: 0,
     name: window.prompt("What is your name?"),
     characterClass: window.prompt("What were you before? (Choose from: soldier, athlete, or doctor)").toLowerCase()
 };
@@ -29,11 +31,9 @@ if (!character.name) {
 
 if (character.characterClass === "soldier") {
     character.strength = 5;
-    character.stealth = 5;
 }
 
 if (character.characterClass === "athlete") {
-    character.speed = 5;
     character.stealth = 5;
 }
 
@@ -41,15 +41,15 @@ if (character.characterClass === "doctor") {
     character.health = 7;
 }
 
-var choice = window.prompt("The brave aventurer and former " + character.class + " " + character.name + ", scavange through the supermarket for supplies. You then noticed a zombie walking towards you! What action will you take? Attack or sneak").toLowerCase();
+var choice = window.prompt("The brave aventurer and former " + character.characterClass + " " + character.name + ", scavange through the supermarket for supplies. You then noticed a zombie walking towards you! What action will you take? Attack or sneak").toLowerCase();
 
 if (choice === "attack") {
-    if (character.strenght >= 5) {
-        window.alert("Using " + weapon + ", you've clean cut the zombie's head off!")
+    if (character.strenght === 5) {
+        window.alert("Using a bat you've found, you clean cut the zombie's head off!")
         outcome = "Win";
         character.strength++;
     } else if (character.strenght < 5) {
-        window.alert(" You hit the zombie, but not hard enough! The zombie bit you before you could attack again.");
+        window.alert("You hit the zombie, but not hard enough! The zombie bit you before you could attack again.");
         outcome = "Loose";
     }
 }
@@ -76,20 +76,20 @@ if (outcome === "Loose") {
 }
 
 
-var weapon baseballBat {
-    var range = 2;
-    var damage = 5;
-    var speed = 3
-}
+//var weapon baseballBat {
+    //var range = 2;
+    //var damage = 5;
+    //var speed = 3
+//}
 
-function fryingPan(params) {
-    var range = 1;
-    var damage = 3;
-    var speed = 2;
-}
+//function fryingPan(params) {
+//    var range = 1;
+  //  var damage = 3;
+    //var speed = 2;
+//}
 
-function rubberChicken() {
-    var range = 1;
-    var damage = 1;
-    var speed = 3;
-}
+//function rubberChicken() {
+  //  var range = 1;
+    //var damage = 1;
+    //var speed = 3;
+//}
