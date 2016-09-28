@@ -44,11 +44,11 @@ if (character.characterClass === "doctor") {
 var choice = window.prompt("The brave aventurer and former " + character.characterClass + " " + character.name + ", scavange through the supermarket for supplies. You then noticed a zombie walking towards you! What action will you take? Attack or sneak").toLowerCase();
 
 if (choice === "attack") {
-    if (character.strenght === 5) {
+    if (character.strength === 5) {
         window.alert("Using a bat you've found, you clean cut the zombie's head off!")
         outcome = "Win";
         character.strength++;
-    } else if (character.strenght < 5) {
+    } else if (character.strengh <= 4) {
         window.alert("You hit the zombie, but not hard enough! The zombie bit you before you could attack again.");
         outcome = "Loose";
     }
@@ -60,7 +60,7 @@ if (choice === "sneak" || choice === "sneak by the zombie") {
     }
     if (character.stealth < 5) {
         window.alert("Your shoes sweaked and the zombie noticed. The zombie rushed towards you.")
-        if (character.strengh >= 5) {
+        if (character.strength === 5) {
             window.alert("Though the zombie rushed towards you, you were able to push the zombie into the wall, and cracked it's head and dies");
             outcome = "Win"
         } else {
