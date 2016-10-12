@@ -32,3 +32,12 @@ if (character.characterClass === "ranger") {
 
 prompt("Brave " +character.name + ", I give you one of these weapons to defeat the creatures, the sword of Omens, the staff of Ra, or the axe of chopping trees. Which do you choose?");
 
+var sword = {
+    
+}
+
+var staff 
+
+var axe
+
+var scenario1
