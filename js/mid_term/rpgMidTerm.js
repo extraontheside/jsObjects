@@ -1,24 +1,34 @@
 alert("Brave villager, you have been choosen to help your village from creatures taking precious food and gold.") 
 
-prompt("But first state your name.")
+var character = {
+    health: 100,
+    strenght: 10,
+    magic: 0,
+    dexterity: 5
+    name: window.prompt("What is your name?"),
+    characterClass: window.prompt("What class would you like to be? (Choose from warrior, spellcaster, or ranger)").toLowerCase()
+};
 
-function player () {
-    var name;
-    var strength = 10;
-    var health = 100;
-    var magic = "Strong";
-    this.potion = 5;
+if (!character.name) {
+    character.name = window.prompt("I don't know what to call you if you don't enter a name. If you don't answer, I will be forced to name you myself.");
+
+    if (!character.name) {
+        window.alert("Your name will be Puddles.");
+        character.name = "Puddles";
+    }
 }
 
-var player1 = new player();
-
-function UpdatePlayer (currentPlayer, healthUpdate, ammo, playerPosition) {
-    currentPlayer.name = prompt("Enter name for current player.");
-    alert(playerPosition + "'s name is " + currentPlayer.name);
-    currentPlayer.health = healthUpdate;
-    currentPlayer.healing = "Weak";
-    currentPlayer.ReArm(ammo);
-    alert(currentPlayer.name + " has " + currentPlayer.ammoCount + " in their arsonal.");
+if (character.characterClass === "warrior") {
+    character.strength = 20;
 }
 
-UpdatePlayer(player1, 20, 1, "Player 1")
+if (character.characterClass === "spellcaster") {
+    character.stealth = 20;
+}
+
+if (character.characterClass === "ranger") {
+    character.health = 20;
+}
+
+prompt("Brave " +character.name + ", I give you one of these weapons to defeat the creatures, the sword of Omens, the staff of Ra, or the axe of chopping trees. Which do you choose?");
+
