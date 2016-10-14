@@ -157,8 +157,11 @@ function places(area) {
 
 function enemyAttack(defend) {
     var pDamage = (enemy.eAttack * 5 - characte.strength);
-    if (damage <= 0);
-    alert("The " + enemy + " didn't do any damage.")
+    if (pDamage <= 0) {
+        alert("The " + enemy + " didn't do any damage.")
+    } else if (pDamage >= 0) {
+        alert("The " + enemy + " dealt " + pDamage + " to you!") 
+    }
 }
 
 function playerAttack(attack) {
